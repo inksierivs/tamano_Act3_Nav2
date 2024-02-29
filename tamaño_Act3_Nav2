@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  
+    <title>Drop-down Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FF7F00;
+        }
+
+        nav {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            margin-top: 3%;
+            margin-left: 3%; 
+            margin-right: 30%; 
+        }
+
+        nav a {
+         
+            text-decoration: none;
+            color: white;
+            padding: 15px;
+            margin: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        nav a:hover{
+            background-color: rgba(255, 255, 255, 0.2); 
+        }
+
+        .dropdown,
+        .sub-menu {
+           display: none;
+           position: absolute;
+           box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+           background-color: #0074cc;
+           z-index: 1;
+           width: 120px;
+           left: 15%;
+     
+}
+
+        .dropdown a,
+        .sub-menu a {
+            color: white;
+            padding: 10px;
+            display: block;
+            text-align: center;
+        }
+
+        .dropdown:hover,
+        .sub-menu:hover {
+            display: block;
+        }
+
+        .dropdown .sub-menu {
+            top: 70%;
+            left: 100%;
+            background-color: purple; /* bg of Web Design dropdown */
+        }
+
+        .dropdown-trigger {
+            position: relative;
+        }
+        
+        
+/* Tutorial arrow*/
+        .dropdown-trigger::after {
+            content: "▼";
+            position: absolute;
+            right: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: orange;
+        }
+
+        .dropdown-trigger:hover + .dropdown {
+            display: block;
+        }
+
+        .sub-menu-trigger:hover + .sub-menu {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a>Home</a>
+        <a class="dropdown-trigger">Tutorials</a>
+        <div class="dropdown">
+            <a>Photoshop</a>
+            <a>Illustrator</a>
+            <a class="sub-menu-trigger">Web Design</a>
+            <div class="sub-menu">
+                <a>HTML</a>
+                <a>CSS</a>
+            </div>
+        </div>
+        <a href="#">Articles</a>
+        <a href="#">Illustrations</a>
+    </nav>
+
+
+</body>
+</html>
